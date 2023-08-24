@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Overview 
+- The main tech stack is [NextJs](https://nextjs.org/) which uses [React](https://react.dev/)
+- Built with [Shad Cn](https://ui.shadcn.com/docs/installation) which uses [Radix UI](https://www.radix-ui.com/) for skeleton based components and  [Tailwind Css](https://tailwindcss.com/) for styling and theming
+- Use Shad Cn as shown in the documentation to install indivisual components, it will install the needed Radix UI skeleton then the styled component you just installed will be located in `src/components/ui` this means you can customize every single aspect of the component 
+- Some youtube vidoes that might be helpful:
+    - [Shad Cn](https://youtu.be/SWBT4w86S3I?si=dUciPvW2RTOzP3p9)
+    - [NextJs, TailwindCSS, Typescript and React](https://www.youtube.com/watch?v=pUNSHPyVryU)
+
 ## Getting Started
 
 First, run the development server:
