@@ -2,7 +2,14 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../material-ui-nextjs-ts"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"\"*.css\"": "\"tailwindcss\""
+		}
+	}
 }

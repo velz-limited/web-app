@@ -1,42 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Material UI - Next.js App Router example in TypeScript
 
-## Overview 
-- The main tech stack is [NextJs](https://nextjs.org/) which uses [React](https://react.dev/)
-- Built with [Shad Cn](https://ui.shadcn.com/docs/installation) which uses [Radix UI](https://www.radix-ui.com/) for skeleton based components and  [Tailwind Css](https://tailwindcss.com/) for styling and theming
-- Use Shad Cn as shown in the documentation to install indivisual components, it will install the needed Radix UI skeleton then the styled component you just installed will be located in `src/components/ui` this means you can customize every single aspect of the component 
-- Some youtube vidoes that might be helpful:
-    - [Shad Cn](https://youtu.be/SWBT4w86S3I?si=dUciPvW2RTOzP3p9)
-    - [NextJs, TailwindCSS, Typescript and React](https://www.youtube.com/watch?v=pUNSHPyVryU)
+This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with Material UI installed.
 
-## Getting Started
+## How to use
 
-First, run the development server:
+Download the example [or clone the repo](https://github.com/mui/material-ui):
+
+<!-- #default-branch-switch -->
 
 ```bash
+curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-nextjs-ts
+cd material-ui-nextjs-ts
+```
+
+Install dependencies and run:
+
+```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This example uses [`next/font/google`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts) to automatically optimize and load Roboto, a custom Google Font.
 
-## Learn More
+## Learn more
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about this example:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.

@@ -1,13 +1,8 @@
-import { ThemeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+import * as React from 'react';
 
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ThemeToggle />
-      <Button> Hi world</Button>
-    </main>
-  )
+    <div>
+    </div>
+  );
 }
