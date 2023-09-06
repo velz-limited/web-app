@@ -1,4 +1,7 @@
+// Adapted from: https://medium.com/frontendweb/how-to-install-material-ui-in-the-next-js-with-the-app-router-10d2a60e41f2#4d49
+// Adapted from: https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
 'use client';
+
 import * as React from 'react';
 import createCache from '@emotion/cache';
 import { useServerInsertedHTML } from 'next/navigation';
@@ -16,7 +19,6 @@ export type NextAppDirEmotionCacheProviderProps = {
   children: React.ReactNode;
 };
 
-// Adapted from https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
 export default function NextAppDirEmotionCacheProvider(props: NextAppDirEmotionCacheProviderProps) {
   const { options, CacheProvider = DefaultCacheProvider, children } = props;
 
