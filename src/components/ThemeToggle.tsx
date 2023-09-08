@@ -1,12 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
-import { useTheme } from "next-themes";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { darkTheme, lightTheme } from "@/theme/styles";
+import { ThemeContext } from "@/theme/ThemeContext";
 
 export default function ThemeToggle() {
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const {theme, setTheme} = useContext(ThemeContext);
   const [mounted, setMounted] = useState(false);
 
   // When mounted on client, now we can show the UI
@@ -14,8 +15,8 @@ export default function ThemeToggle() {
 
   return (
     <IconButton
-      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
-      {resolvedTheme === "light" ? <DarkModeIcon style={{ color: 'black' }} /> : <LightModeIcon />}
+      onClick={() => theme === darkTheme ? setTheme(lightTheme): setTheme(darkTheme)}>
+      {theme === lightTheme ? <DarkModeIcon style={{ color: 'black' }} /> : <LightModeIcon />}
     </IconButton>
   )
 }

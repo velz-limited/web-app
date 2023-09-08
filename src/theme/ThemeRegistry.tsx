@@ -1,41 +1,25 @@
-// Adapted from: https://github.com/DiMatteoL/buzzrank-tutorial/tree/main
 "use client";
 
 import * as React from 'react';
-import { Theme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import NextAppDirEmotionCacheProvider from './EmotionCache';
-import { ThemeProvider as PreferredThemeProvider } from "next-themes";
-import { useTheme } from "next-themes";
-import { GlobalStyles } from "@mui/material";
-import { darkTheme, globalStyles, lightTheme } from "@/theme/styles";
-import {useState, useEffect} from "react";
-
-export type ThemeRegistryProps = {
-    theme: Theme;
-    children: React.ReactNode;
-};
+import { darkTheme } from "@/theme/styles";
+import {useState} from "react";
+import NextCacheProvider from './NextCacheProvider';
+import { ThemeContext } from './ThemeContext';
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
-  const { resolvedTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState(darkTheme);
-
-  useEffect(() => {
-    resolvedTheme === "light"
-      ? setCurrentTheme(lightTheme)
-      : setCurrentTheme(darkTheme);
-  }, [resolvedTheme]);
+  const [theme, setTheme] = useState(darkTheme);
 
   return (
-    <PreferredThemeProvider>
-      <NextAppDirEmotionCacheProvider options={{ key: 'mui' }}>
-        <ThemeProvider theme={currentTheme}>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <NextCacheProvider options={{ key: 'mui' }}>
+        <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <GlobalStyles styles={globalStyles} />
           {children}
         </ThemeProvider>
-      </NextAppDirEmotionCacheProvider>
-    </PreferredThemeProvider>
+      </NextCacheProvider>
+    </ThemeContext.Provider>
   );
 }

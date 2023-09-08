@@ -8,7 +8,7 @@ import { useServerInsertedHTML } from 'next/navigation';
 import { CacheProvider as DefaultCacheProvider } from '@emotion/react';
 import type { EmotionCache, Options as OptionsOfCreateCache } from '@emotion/cache';
 
-export type NextAppDirEmotionCacheProviderProps = {
+export type NextCacheProviderProps = {
   /** This is the options passed to createCache() from 'import createCache from "@emotion/cache"' */
   options: Omit<OptionsOfCreateCache, 'insertionPoint'>;
   /** By default <CacheProvider /> from 'import { CacheProvider } from "@emotion/react"' */
@@ -19,7 +19,8 @@ export type NextAppDirEmotionCacheProviderProps = {
   children: React.ReactNode;
 };
 
-export default function NextAppDirEmotionCacheProvider(props: NextAppDirEmotionCacheProviderProps) {
+// for NextAppDirEmotion
+export default function NextCacheProvider(props: NextCacheProviderProps) {
   const { options, CacheProvider = DefaultCacheProvider, children } = props;
 
   const [registry] = React.useState(() => {
