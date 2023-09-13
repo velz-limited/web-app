@@ -4,7 +4,7 @@ import { IconButton } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { darkTheme, lightTheme } from "@/theme/styles";
-import { ThemeContext } from "@/theme/ThemeContext";
+import { ThemeContext } from "@/context/ThemeContext";
 
 export default function ThemeToggle() {
   const {theme, setTheme} = useContext(ThemeContext);

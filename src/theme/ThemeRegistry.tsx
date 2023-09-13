@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { darkTheme } from "@/theme/styles";
 import {useState} from "react";
 import NextCacheProvider from './NextCacheProvider';
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from '@/context/ThemeContext';
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState(darkTheme);

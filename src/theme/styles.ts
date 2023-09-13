@@ -1,13 +1,31 @@
 "use client";
 import {  createTheme, Theme } from "@mui/material/styles";
+import { componentBackground, mainBackground } from "./colors";
+import { MuiAutocomplete, MuiInputBase, MuiTextField } from "./components/InputField";
+import { MuiButton } from "./components/Button";
+
 
 export const darkTheme:Theme = createTheme( {
   palette: {
-    background: { default: "#2D2D2D", paper: "#2D2D2D"},
-    primary: { main: "#9147FF" },
-    secondary: { main: "#2a48f3" },
-    mode: "dark",
+    mode: 'dark',
+    primary: {
+      main: '#55C2B9',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+    background: {
+      default: mainBackground,
+      paper: componentBackground,
+    },
   },
+  components: {
+    MuiTextField,
+    MuiAutocomplete,
+    MuiInputBase,
+    MuiButton
+  }
+ 
 });
 
 export const lightTheme:Theme = createTheme( {

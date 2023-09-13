@@ -11,11 +11,13 @@ import { Padding } from '@mui/icons-material';
 export default function DestinationInput() {
   return (
     <Autocomplete
-      disablePortal
+    
       options={destinations }
       getOptionLabel={(option) => option.label}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Chose you destination" />}
+      renderInput={(params) => <TextField 
+        {...params}
+      label="Destination" />}
       renderOption={(props, option) => {
         return (
           <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
@@ -23,7 +25,6 @@ export default function DestinationInput() {
             <img
               loading="lazy"
               width="24"
-              
               src={`https://flagcdn.com/24x18/${option.code.toLowerCase()}.png`}
               srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
               alt=""
@@ -31,7 +32,7 @@ export default function DestinationInput() {
             {option.label} ({option.country}) 
           </Box>
           <Icon sx={{mb: 1}} style={{width:24, height: 24}}>
-            {option.available ? <CheckCircleIcon style={{color: 'green' }}/> : <CancelIcon style={{ color: 'red' }}/>}
+            {option.available ? <CheckCircleIcon style={{color: 'green' }}/> : <></>}
           </Icon>
         </Box>
         )
