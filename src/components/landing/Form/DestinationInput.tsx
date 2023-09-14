@@ -7,34 +7,20 @@ import { Destination } from '@/types/Destination';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Padding } from '@mui/icons-material';
+import { AutocompleteProps } from '@mui/material/Autocomplete';
+import DestinationOption from './DestinationOption';
 
 export default function DestinationInput() {
   return (
     <Autocomplete
-    
       options={destinations }
       getOptionLabel={(option) => option.label}
-      sx={{ width: 300 }}
       renderInput={(params) => <TextField 
         {...params}
       label="Destination" />}
       renderOption={(props, option) => {
         return (
-          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-          <Box paddingLeft={1} sx={{ flexGrow: 1 }}>
-            <img
-              loading="lazy"
-              width="24"
-              src={`https://flagcdn.com/24x18/${option.code.toLowerCase()}.png`}
-              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-              alt=""
-            />
-            {option.label} ({option.country}) 
-          </Box>
-          <Icon sx={{mb: 1}} style={{width:24, height: 24}}>
-            {option.available ? <CheckCircleIcon style={{color: 'green' }}/> : <></>}
-          </Icon>
-        </Box>
+          <DestinationOption props={props} option={option} />
         )
       }} />
   )

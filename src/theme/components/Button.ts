@@ -1,18 +1,25 @@
-import { Components, Theme, ThemeOptions } from "@mui/material/styles";
-import { componentBackground, mainBackground } from "../colors";
+import { Components } from "@mui/material/styles";
+import { darkTextColor, greyTextColor } from "@/theme/colors";
 
-export const style: Components<Omit<Theme, "components">> = {
-  MuiButton: {
-    styleOverrides: {
-        root: {
+export default function Button(darkMode: boolean): Components {
+  return {
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: "text" },
+          style: {
+            textDecoration: "underline",
+            fontSize: "17px",
+            color: darkMode? greyTextColor: darkTextColor,
+          }
+        },
+      ],
+      styleOverrides: {
+          root: {
             textTransform: 'none',
-        } 
-    }
-  },
-
-  
-  
-
-};
-
-export const MuiButton = style.MuiButton;
+            
+          } 
+      }
+    },
+  }
+}

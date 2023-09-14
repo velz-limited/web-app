@@ -1,28 +1,23 @@
-import { Components, Theme, ThemeOptions } from "@mui/material/styles";
-import { componentBackground, mainBackground } from "../colors";
+import { Components } from "@mui/material/styles";
+import { componentBackground } from "@/theme/colors";
 
-export const style: Components<Omit<Theme, "components">> = {
-  MuiInputBase: {
-    styleOverrides: {
-      root: {
-        borderRadius: '15px !important',
-        backgroundColor: componentBackground,
+export default function InputField(darkMode: boolean): Components {
+  return {
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          borderRadius: '15px !important',
+          backgroundColor: darkMode? componentBackground: "",
+        }
       }
-    }
-  },
-
+    },
+    
+    MuiTextField: {
   
+    },
   
-  MuiTextField: {
-
-  },
-
-
-  MuiAutocomplete: {
-
-  },
-};
-
-export const MuiAutocomplete = style.MuiAutocomplete;
-export const MuiTextField = style.MuiTextField;
-export const MuiInputBase = style.MuiInputBase;
+    MuiAutocomplete: {
+  
+    },
+  }
+}

@@ -4,10 +4,10 @@ import { IconButton } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { darkTheme, lightTheme } from "@/theme/styles";
-import { ThemeContext } from "@/context/ThemeContext";
+import {  isDarkTheme, toggleTheme, useThemeContext } from "@/context/ThemeContext";
 
 export default function ThemeToggle() {
-  const {theme, setTheme} = useContext(ThemeContext);
+  const {theme, setTheme} = useThemeContext();
   const [mounted, setMounted] = useState(false);
 
   // When mounted on client, now we can show the UI
@@ -15,8 +15,8 @@ export default function ThemeToggle() {
 
   return (
     <IconButton
-      onClick={() => theme === darkTheme ? setTheme(lightTheme): setTheme(darkTheme)}>
-      {theme === lightTheme ? <DarkModeIcon style={{ color: 'black' }} /> : <LightModeIcon />}
+      onClick={() => toggleTheme({theme, setTheme})}>
+      {isDarkTheme(theme) ? <LightModeIcon /> :  <DarkModeIcon style={{ color: 'black' }} /> }
     </IconButton>
   )
 }

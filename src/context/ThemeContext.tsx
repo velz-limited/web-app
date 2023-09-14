@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react"
-import { darkTheme } from "../theme/styles"
+import { darkTheme, lightTheme } from "../theme/styles"
 import { Theme } from "@mui/material/styles"
 
 
@@ -17,7 +17,15 @@ export function useThemeContext() {
   return useContext(ThemeContext)
 }
 
-export function isDarkTheme(){
-  const {theme} = useThemeContext()
+export function isDarkTheme(theme?: Theme){
+  if(theme == null){
+    const {theme} = useThemeContext()
+    return theme.palette.mode === 'dark'
+  }
   return theme.palette.mode === 'dark'
+}
+
+export function toggleTheme(context: ThemeContextType){
+  const {theme, setTheme} = context
+  isDarkTheme(theme) ? setTheme(lightTheme) : setTheme(darkTheme)
 }
