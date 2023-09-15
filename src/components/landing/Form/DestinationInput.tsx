@@ -2,14 +2,10 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Box, Icon } from '@mui/material';
 import { Destination } from '@/types/Destination';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CancelIcon from '@mui/icons-material/Cancel';
-import { Padding } from '@mui/icons-material';
-import { AutocompleteProps } from '@mui/material/Autocomplete';
 import DestinationOption from './DestinationOption';
 
+// TODO: show available ones first in alphabatical order 
 export default function DestinationInput() {
   return (
     <Autocomplete
@@ -39,5 +35,4 @@ const destinations: readonly Destination[] = [
     country: "Jordan",
     available: false
   }
-
 ]
