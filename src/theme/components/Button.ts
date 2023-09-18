@@ -1,5 +1,5 @@
 import { Components } from "@mui/material/styles";
-import { darkTextColor, greyTextColor } from "@/theme/colors";
+import { darkColors } from "@/theme";
 
 export default function Button(darkMode: boolean): Components {
   return {
@@ -10,14 +10,13 @@ export default function Button(darkMode: boolean): Components {
           style: {
             textDecoration: "underline",
             fontSize: "17px",
-            color: darkMode? greyTextColor: darkTextColor,
+            color: darkMode? darkColors.text.grey: darkColors.text.dark,
           }
         },
       ],
       styleOverrides: {
           root: {
             textTransform: 'none',
-            
           } 
       }
     },

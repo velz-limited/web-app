@@ -1,5 +1,5 @@
 import { Components } from "@mui/material/styles";
-import { componentBackground } from "@/theme/colors";
+import { darkColors } from "@/theme";
 
 export default function InputField(darkMode: boolean): Components {
   return {
@@ -7,7 +7,7 @@ export default function InputField(darkMode: boolean): Components {
       styleOverrides: {
         root: {
           borderRadius: '15px !important',
-          backgroundColor: darkMode? componentBackground: "",
+          backgroundColor: darkMode? darkColors.background.components: "",
         }
       }
     },

@@ -18,7 +18,6 @@ export const darkTheme:Theme = createTheme( {
     },
   },
   components: darkComponents
- 
 });
 
 export const lightTheme:Theme = createTheme( {

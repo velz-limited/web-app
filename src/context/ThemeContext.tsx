@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react"
-import { darkTheme, lightTheme } from "../theme/styles"
+import { darkTheme, lightTheme } from "@/theme"
 import { Theme } from "@mui/material/styles"
 
 

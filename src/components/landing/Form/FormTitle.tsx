@@ -1,5 +1,5 @@
-import { greenTextColor } from '@/theme/colors'
-import { Stack, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import { darkColors } from '@/theme'
 import React from 'react'
 
 export default function FormTitle() {
@@ -7,7 +7,7 @@ export default function FormTitle() {
     <Typography variant="h4">
       Yours to <span style={{
         fontStyle: 'italic',
-        color: greenTextColor }}>explore</span>!
+        color: darkColors.text.green }}>explore</span>!
     </Typography>
   )
 }

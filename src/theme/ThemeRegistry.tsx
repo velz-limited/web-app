@@ -1,9 +1,8 @@
 "use client";
-
 import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { darkTheme } from "@/theme/styles";
+import { darkTheme } from "@/theme";
 import {useState} from "react";
 import NextCacheProvider from './NextCacheProvider';
 import { ThemeContext } from '@/context/ThemeContext';

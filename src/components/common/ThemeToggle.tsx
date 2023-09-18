@@ -1,9 +1,8 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { darkTheme, lightTheme } from "@/theme/styles";
 import {  isDarkTheme, toggleTheme, useThemeContext } from "@/context/ThemeContext";
 
 export default function ThemeToggle() {
