@@ -4,8 +4,11 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Destination } from '@/types/Destination';
 import DestinationOption from './DestinationOption';
+import { AutocompleteProps } from '@mui/material/Autocomplete';
 
 // TODO: show available ones first in alphabatical order 
+// TODO: move data 
+// TODO: add needed props 
 export default function DestinationInput() {
   return (
     <Autocomplete

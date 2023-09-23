@@ -10,6 +10,12 @@ function getColors(darkMode: boolean) {
       main: "#040F1F",
       components: "#132034",
     },
+    icon: {
+      normalBackground: "#1F3C47",
+      selectedBackground: "#55C2B9",
+      selectedForeground: "#242F41",
+      normalForeground: "#55C2B9",
+    },
     text: {
       green: "#55C2B9",
       grey: "#DADADA",

@@ -10,15 +10,30 @@ export default function Button(darkMode: boolean): Components {
           style: {
             textDecoration: "underline",
             fontSize: "17px",
-            color: darkMode? darkColors.text.grey: darkColors.text.dark,
-          }
+            color: darkMode ? darkColors.text.grey : darkColors.text.dark,
+          },
+        },
+        {
+          props: { variant: "contained" },
+          style: {},
+        },
+        {
+          props: { variant: "outlined" },
+          style: {
+            backgroundColor: darkColors.background.components,
+            border: `2px solid ${darkColors.text.green}`,
+            ":hover": {
+              border: `2px solid ${darkColors.text.green}`,
+            },
+          },
         },
       ],
       styleOverrides: {
-          root: {
-            textTransform: 'none',
-          } 
-      }
+        root: {
+          textTransform: "none",
+          borderRadius: "15px !important",
+        },
+      },
     },
-  }
+  };
 }
