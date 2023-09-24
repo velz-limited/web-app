@@ -8,11 +8,14 @@ export default function Drawer(darkMode: boolean): Components {
             root:{
             },
             paper: {
-                position: 'fixed', // To make the sidebar float
-                bottom: 20,
-                top: 20,
-                left: 10,
-                borderRadius: '16px', // Add round borders 
+                // display: "flex",
+                // position: 'fixed', // To make the sidebar float
+                // bottom: 20,
+                // top: 20,
+                // left: 10
+                // margin: "10px",
+                // marginBottom: "auto",
+                // borderRadius: '15px', // Add round borders 
             }
         }
     }

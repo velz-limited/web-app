@@ -23,8 +23,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import { Settings } from "@mui/icons-material";
 import { BottomNavLinks, TopNavLinks } from "@/constants/NavLinks";
 import NavLink from "@/types/NavLink";
+import App from "next/app";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -96,19 +97,10 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function MiniDrawer() {
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
   const toggleDrawer = () => {
-    open ? handleDrawerClose() : handleDrawerOpen();
+    open ? setOpen(false) : setOpen(true);
   };
 
   const navLinkItem = (navLink: NavLink, index: number, onClick?: React.MouseEventHandler<HTMLDivElement>) => {
@@ -136,14 +128,39 @@ export default function MiniDrawer() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", overflow: "auto" }}>
+      {/* <AppBar position="fixed" open={open}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            Persistent drawer
+          </Typography>
+        </Toolbar>
+      </AppBar> */}
       <Drawer
-        anchor="left"
-        sx={{ borderRadius: 10 }}
+      PaperProps={{sx: { paddingTop: 0, paddingBottom: 0, margin: "10px", marginTop: "20px",
+      height: "calc(100vh - 34px)",
+      borderRadius: "15px",}}}
+        // anchor="left"
+        // sx={{
+        //   width: drawerWidth,
+        //   flexShrink: 0,
+        //   '& .MuiDrawer-paper': {
+        //     height: "calc(100vh - 64px)",
+        //   },
+        // }}
         variant="permanent"
         open={open}
       >
-        <List>
+        {/* <DrawerHeader/> */}
+        <List >
           {TopNavLinks.map((navLink, index) =>
             navLinkItem(navLink, index)
           )}
@@ -156,7 +173,7 @@ export default function MiniDrawer() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+        {/* <DrawerHeader/> */}
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
