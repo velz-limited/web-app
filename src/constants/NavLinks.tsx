@@ -11,22 +11,26 @@ export const TopNavLinks: NavLink [] = [
     {
         path: "/",
         label: "Plans",
-        icon: <CalendarMonthIcon />
+        icon: <CalendarMonthIcon />,
+        content: <h1>Plans</h1>
     },
     {
         path: "/",
         label: "Map",
-        icon: <MapIcon />
+        icon: <MapIcon />,
+        content: <h1>Map</h1>
     },
     {
         path: "/",
         label: "Friends",
-        icon: <PeopleIcon />
+        icon: <PeopleIcon />,
+        content: <h1>Friends</h1>
     },
     {
         path: "/",
         label: "Profile",
-        icon: <PersonIcon />
+        icon: <PersonIcon />,
+        content: <h1>Profile</h1>
     },
 
 ];
@@ -36,6 +40,7 @@ export const BottomNavLinks: NavLink [] = [
         path: "/",
         label: "Settings",
         icon: <SettingsIcon />,
+        content: <h1>Settings</h1>
     },
     {
         path: "/",

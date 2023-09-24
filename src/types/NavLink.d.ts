@@ -7,6 +7,6 @@ export default interface NavLink {
     icon: ReactNode, // icon to display in the nav
     expandedIcon?: ReactNode, // icon to display in the nav when expanded
     isExpander?: boolean, // is this a nav item that expands to show more nav items?
-    content?: ComponentType, // content to display in the main section 
+    content?: ReactNode, // content to display in the main section 
 };
 

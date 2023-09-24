@@ -24,6 +24,8 @@ import { Settings } from "@mui/icons-material";
 import { BottomNavLinks, TopNavLinks } from "@/constants/NavLinks";
 import NavLink from "@/types/NavLink";
 import App from "next/app";
+import { darkColors } from "@/theme";
+import { Select } from "@mui/material";
 
 const drawerWidth = 200;
 
@@ -98,9 +100,10 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
+  const [selectedNav, setSelectedNav] = React.useState<NavLink>(TopNavLinks[0]);
 
   const toggleDrawer = () => {
-    open ? setOpen(false) : setOpen(true);
+    setOpen(!open)
   };
 
   const navLinkItem = (navLink: NavLink, index: number, onClick?: React.MouseEventHandler<HTMLDivElement>) => {
@@ -111,10 +114,20 @@ export default function MiniDrawer() {
           justifyContent: open ? "initial" : "center",
           px: 2.5,
         }}
-        onClick={onClick}
+        onClick={onClick == undefined? () => {
+          setSelectedNav(navLink);
+        } : onClick}
       >
         <ListItemIcon
           sx={{
+            borderRadius: "15px",
+            color: navLink === selectedNav? 
+            darkColors.icon.selectedForeground: 
+            darkColors.icon.normalForeground,
+            padding: 1,
+            backgroundColor:navLink === selectedNav? 
+            darkColors.icon.selectedBackground:
+            darkColors.icon.normalBackground,
             minWidth: 0,
             mr: open ? 3 : "auto",
             justifyContent: "center",
@@ -173,36 +186,7 @@ export default function MiniDrawer() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        {/* <DrawerHeader/> */}
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        {selectedNav.content}
       </Box>
     </Box>
   );
