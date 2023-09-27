@@ -53,7 +53,10 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-// TODO: ask on if we chose routing when button clicked or change component
+// TODO: move navbar to the botton mobile view 
+// TODO: remove outline 
+// TODO: remove divider
+// TODO: add routing and change components when navifation changes  
 export default function SideBar() {
   const [open, setOpen] = React.useState(false);
   const [selectedNav, setSelectedNav] = React.useState<NavLink>(TopNavLinks[0]);

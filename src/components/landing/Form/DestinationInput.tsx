@@ -8,7 +8,6 @@ import { AutocompleteProps } from '@mui/material/Autocomplete';
 
 // TODO: show available ones first in alphabatical order 
 // TODO: move data 
-// TODO: add needed props 
 export default function DestinationInput() {
   return (
     <Autocomplete

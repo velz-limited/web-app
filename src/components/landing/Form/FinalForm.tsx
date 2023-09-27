@@ -5,6 +5,7 @@ import DateInput from "@/components/common/DateInput";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { darkColors } from "@/theme";
+import { ArrowButton, StyledHeader } from "@/components/common";
 
 export default function FinalForm() {
   const width = {
@@ -21,11 +22,7 @@ export default function FinalForm() {
       alignItems="center"
     >
       <Grid textAlign="center" item width={width}>
-        <Typography variant="h4">
-          Yours to <span style={{
-            fontStyle: 'italic',
-            color: darkColors.text.green }}>explore</span>!
-        </Typography>
+        <StyledHeader before="Yours to " styledText="explore" after="!" />
       </Grid>
 
       <Grid item width={width}>
@@ -39,18 +36,7 @@ export default function FinalForm() {
       </Grid>
 
       <Grid item display="flex" width={width} justifyContent="flex-end">
-        <Button
-          sx={{ fontWeight: 900, fontSize: 16 }}
-          endIcon={
-            <ArrowRightAltIcon
-              fontSize="large"
-              sx={{ fontWeight: 900, fontSize: 16 }}
-            />
-          }
-          variant="contained"
-        >
-          Magic
-        </Button>
+        <ArrowButton label="Magic" />
       </Grid>
     </Grid>
   );
