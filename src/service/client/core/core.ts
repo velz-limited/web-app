@@ -5,12 +5,29 @@ import token from "../token/token"
 
 const api = new CommonApi(String(process.env.NEXT_PUBLIC_CORE_SERVICE_API))
 
+const buildOAuth2Request = (provider: string): URL => {
+  if (typeof window !== "undefined") {
+    const url = new URL(provider, String(process.env.NEXT_PUBLIC_CORE_SERVICE_API))
+    url.searchParams.append("redirect_uri", window.location.href)
+    return url
+  }
+  return new URL("")
+}
+
 const core = {
   user: {
-    isAuthenticated() {
+    isAuthenticated(): boolean {
       return !!token.getAccessToken()
     },
-    // TODO J: Add OAuth2 functions here.
+    oauth2Google(): URL {
+      return buildOAuth2Request("/oauth2/authorization/google")
+    },
+    oauth2Facebook(): URL {
+      return buildOAuth2Request("/oauth2/authorization/facebook")
+    },
+    oauth2Github(): URL {
+      return buildOAuth2Request("/oauth2/authorization/github")
+    },
     async signUp(data: UserSignUpRequest): Promise<Response> {
       const response = await api.post("/user/sign-up", data)
       const responseClone = response.clone()
