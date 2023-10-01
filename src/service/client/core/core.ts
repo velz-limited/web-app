@@ -27,12 +27,12 @@ const core = {
       return api.get("/user/refresh-token")
     },
     async signOut(): Promise<Response> {
-      const response = await api.authGet("/user/sign-out", true)
+      const response = await api.authGet("/user/sign-out")
       if (response.ok) token.removeAllTokens()
       return response
     },
     async signOutAll(): Promise<Response> {
-      const response = await api.authGet("/user/sign-out-all", true)
+      const response = await api.authGet("/user/sign-out-all")
       if (response.ok) token.removeAllTokens()
       return response
     },
@@ -48,14 +48,14 @@ const core = {
     async sendPasswordReset(data: UserSendPasswordResetRequest): Promise<Response> {
       return api.post("/user/send-password-reset", data)
     },
-    async details(autoSignout: boolean = true): Promise<Response> {
-      return api.authGet("/user/details", autoSignout)
+    async details(): Promise<Response> {
+      return api.authGet("/user/details")
     },
-    async update(data: UserUpdateRequest, autoSignout: boolean = true): Promise<Response> {
-      return api.authPut("/user/update", data, undefined, autoSignout)
+    async update(data: UserUpdateRequest): Promise<Response> {
+      return api.authPut("/user/update", data)
     },
-    async delete(autoSignout: boolean = true): Promise<Response> {
-      const response = await api.authDelete("/user/delete", autoSignout)
+    async delete(): Promise<Response> {
+      const response = await api.authDelete("/user/delete")
       if (response.ok) token.removeAllTokens()
       return response
     },
