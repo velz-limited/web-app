@@ -36,4 +36,5 @@ interface UserUpdateRequest {
   email?: string
   rawPassword?: string
   isPrivate?: boolean
+  profileDescription?: string
 }
