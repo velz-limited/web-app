@@ -1,20 +1,26 @@
 import { Components } from "@mui/material/styles";
-import Button from "./Button";
-import InputField from "./InputField";
-import Icon  from "./Icon";
-import Drawer from "./Drawer";
+import ButtonStyle from "./ButtonStyle";
+import InputFieldStyle from "./InputFieldStyle";
+import IconStyle  from "./IconStyle";
+import DrawerStyle from "./DrawerStyle";
+import LinkStyle from "./LinkStyle";
+import CheckboxStyle from "./CheckboxStyle";
 
 function getComponents(darkMode: boolean): Components {
-  const inputComp = InputField(darkMode);
-  const buttonComp = Button(darkMode);
-  const iconComp = Icon(darkMode);
-  const drawerComp = Drawer(darkMode);
+  const inputComp = InputFieldStyle(darkMode);
+  const buttonComp = ButtonStyle(darkMode);
+  const iconComp = IconStyle(darkMode);
+  const drawerComp = DrawerStyle(darkMode);
+  const linkComp = LinkStyle(darkMode);
+  const checkComp = CheckboxStyle(darkMode);
 
   return {
     ...inputComp,
     ...buttonComp,
     ...iconComp,
     ...drawerComp,
+    ...linkComp,
+    ...checkComp
   };
 }
 

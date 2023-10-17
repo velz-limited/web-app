@@ -1,14 +1,9 @@
-export const mainBackground = "#040F1F";
-export const componentBackground = "#132034";
-export const greenTextColor = "#55C2B9";
-export const greyTextColor = "#DADADA";
-export const darkTextColor = "#171717";
-
-function getColors(darkMode: boolean) {
+function getColorPalette(darkMode: boolean) {
   return {
     background: {
-      main: "#040F1F",
-      components: "#132034",
+      main: darkMode? "#040F1F": "#D6D6D6",
+      components: darkMode? "#132034": "#D6D6D6",
+      componentHover: "#1D2A3E"
     },
     icon: {
       normalBackground: "#1F3C47",
@@ -24,5 +19,9 @@ function getColors(darkMode: boolean) {
   };
 }
 
-export const darkColors = getColors(true);
-export const lightColors = getColors(false);
+export const darkColors = getColorPalette(true);
+export const lightColors = getColorPalette(false);
+
+export function getColors(darkMode: boolean){
+  return darkMode? darkColors: lightColors 
+}

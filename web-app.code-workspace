@@ -7,6 +7,9 @@
 	"settings": {
 		"files.associations": {
 			"\"*.css\"": "\"tailwindcss\""
-		}
+		},
+		"cSpell.words": [
+			"Velz"
+		]
 	}
 }

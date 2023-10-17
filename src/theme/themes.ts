@@ -1,32 +1,32 @@
-"use client";
-import {  createTheme, Theme } from "@mui/material/styles";
-import { componentBackground, mainBackground } from "./colors";
-import { darkComponents, lightComponents } from "./components";
+"use client"
+import { createTheme, Theme } from "@mui/material/styles"
+import { darkColors, lightColors } from "./colors"
+import { darkComponents, lightComponents } from "./components"
 
-export const darkTheme:Theme = createTheme( {
+export const darkTheme: Theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#55C2B9',
-    },
-    secondary: {
-      main: '#f50057',
+      main: darkColors.text.green,
     },
     background: {
-      default: mainBackground,
-      paper: componentBackground,
+      default: darkColors.background.main,
+      paper: darkColors.background.components,
     },
   },
-  components: darkComponents
-});
+  components: darkComponents,
+})
 
-export const lightTheme:Theme = createTheme( {
+// TODO: fix light theme 
+export const lightTheme: Theme = createTheme({
   palette: {
-    background: { default: "#D6D6D6", paper: "#D6D6D6"},
+    background: {
+      default: lightColors.background.main,
+      paper: lightColors.background.components,
+    },
     primary: { main: "#9147FF" },
     secondary: { main: "#2a48f3" },
     mode: "light",
   },
-  components: lightComponents
-});
-
+  components: lightComponents,
+})

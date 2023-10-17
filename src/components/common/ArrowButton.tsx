@@ -9,7 +9,8 @@ export interface ArrowButtonProps {
 export default function ArrowButton(props: ArrowButtonProps) {
   return (
     <Button
-    sx={{ fontWeight: 900, fontSize: 16 }}
+    
+    sx={{  fontWeight: 900, fontSize: 16 }}
     endIcon={
       <ArrowRightAltIcon
         fontSize="large"
