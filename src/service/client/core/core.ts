@@ -29,50 +29,50 @@ const core = {
       return buildOAuth2Request("/oauth2/authorization/github")
     },
     async signUp(data: UserSignUpRequest): Promise<Response> {
-      const response = await api.post("/user/sign-up", data)
+      const response = await api.post("/user/auth/sign-up", data)
       const responseClone = response.clone()
       if (responseClone.ok) token.setAccessToken((await responseClone.json()).access_token)
       return response
     },
     async signIn(data: UserSignInRequest): Promise<Response> {
-      const response = await api.post("/user/sign-in", data)
+      const response = await api.post("/user/auth/sign-in", data)
       const responseClone = response.clone()
       if (responseClone.ok) token.setAccessToken((await responseClone.json()).access_token)
       return response
     },
     async refreshToken(): Promise<Response> {
-      return api.get("/user/refresh-token")
+      return api.get("/user/auth/refresh-token")
     },
     async signOut(): Promise<Response> {
-      const response = await api.authGet("/user/sign-out")
+      const response = await api.authGet("/user/auth/sign-out")
       if (response.ok) token.removeAllTokens()
       return response
     },
     async signOutAll(): Promise<Response> {
-      const response = await api.authGet("/user/sign-out-all")
+      const response = await api.authGet("/user/auth/sign-out-all")
       if (response.ok) token.removeAllTokens()
       return response
     },
     async emailVerification(data: UserEmailVerificationRequest): Promise<Response> {
-      return api.put("/user/email-verification", data)
+      return api.put("/user/auth/email-verification", data)
     },
     async sendEmailVerification(data: UserSendEmailVerificationRequest): Promise<Response> {
-      return api.post("/user/send-email-verification", data)
+      return api.post("/user/auth/send-email-verification", data)
     },
     async passwordReset(data: UserResetPasswordRequest): Promise<Response> {
-      return api.put("/user/password-reset", data)
+      return api.put("/user/auth/password-reset", data)
     },
     async sendPasswordReset(data: UserSendPasswordResetRequest): Promise<Response> {
-      return api.post("/user/send-password-reset", data)
+      return api.post("/user/auth/send-password-reset", data)
     },
     async details(): Promise<Response> {
-      return api.authGet("/user/details")
+      return api.authGet("/user/auth/details")
     },
     async update(data: UserUpdateRequest): Promise<Response> {
-      return api.authPut("/user/update", data)
+      return api.authPut("/user/auth/update", data)
     },
     async delete(): Promise<Response> {
-      const response = await api.authDelete("/user/delete")
+      const response = await api.authDelete("/user/auth/delete")
       if (response.ok) token.removeAllTokens()
       return response
     },
