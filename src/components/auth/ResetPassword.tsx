@@ -1,6 +1,8 @@
+"use client"
 import { Button, Grid, TextField } from "@mui/material"
 import React from "react"
 import { StyledHeader, ArrowButton } from "@/components/common"
+import { redirect } from "next/navigation"
 
 export default function ResetPassword() {
   const width = {
@@ -31,7 +33,7 @@ export default function ResetPassword() {
         direction="row"
         width={width}
       >
-        <Button sx={{ height: "45px", width: "25%" }} variant="plain">
+        <Button href="/auth/log-in" sx={{ height: "45px", width: "25%" }} variant="plain">
           Back
         </Button>
         <ArrowButton label="Continue" />

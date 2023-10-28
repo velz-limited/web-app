@@ -19,7 +19,9 @@
     "date-fns": "^2.30.0",
     "next": "13.x",
     "react": "18.x",
-    "react-dom": "18.x"
+    "react-dom": "18.x",
+    "react-query": "^3.39.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "latest",
