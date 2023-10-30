@@ -6,10 +6,10 @@ import * as React from 'react';
 
 export default function HomePage() {
   redirect("auth/log-in")
-  // return (
-    // <LandingPage />
-    // <SideBar/>
-    // <LogIn />
-  // );
-  return <></>
+  return <>
+    <LandingPage />
+    <SideBar/>
+    <LogIn />
+  </>;
+  // return <></>
 }
